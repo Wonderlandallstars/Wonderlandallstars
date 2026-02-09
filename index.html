@@ -1,92 +1,3 @@
-/enchanted-legacy-cheer
-│── index.html
-│── teams.html
-│── team-template.html
-│── style.css
-│── images/
-│   └── logo-placeholder.png
-```
-
----
-
-## 🎀 style.css (COLORFUL + DISNEY VIBE)
-```css
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #fff0f8, #f3f0ff);
-}
-header {
-  background: linear-gradient(90deg, #ff2fa1, #7a3cff, #00c2ff);
-  padding: 30px;
-  text-align: center;
-  color: white;
-}
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-section {
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-.logo {
-  width: 280px;
-  margin: 30px auto;
-}
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-.card {
-  background: white;
-  border-radius: 22px;
-  padding: 25px;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-  transition: transform 0.3s;
-}
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-}
-.card h3 {
-  color: #ff2fa1;
-}
-.placeholder {
-  width: 100%;
-  height: 180px;
-  background: linear-gradient(45deg, #ffd6f0, #d6e4ff);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  color: #555;
-}
-footer {
-  background: #7a3cff;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-.button {
-  display: inline-block;
-  background: #ff2fa1;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  text-decoration: none;
-  margin-top: 15px;
-}
-```
-
----
-
-## 🏰 index.html (HOME – LOGO + GYM INFO ONLY)
-```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,123 +5,35 @@ footer {
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
-  <h1>Enchanted Legacy Cheer</h1>
+  <h1>✨ Enchanted Legacy Cheer ✨</h1>
   <nav>
     <a href="index.html">Home</a>
     <a href="teams.html">Teams</a>
+    <a href="tryouts.html">Tryouts</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
-<section style="text-align:center;">
-  <img src="images/logo-placeholder.png" class="logo" alt="Gym Logo Placeholder">
-  <h2>Where Magic Meets Muscle ✨</h2>
-  <p>Enchanted Legacy Cheer is a Disney-themed all-star cheer gym dedicated to building confidence, strength, and unforgettable performances. From Prep to Level 6, our athletes train in a positive, high-energy environment that blends elite technique with storytelling and creativity.</p>
-</section>
+<div class="container hero">
+  <img src="https://via.placeholder.com/300" alt="Gym Logo Placeholder">
+  <div class="card">
+    <h2>Where Magic Meets Muscle 🏰</h2>
+    <p>
+      Enchanted Legacy Cheer is a Disney-inspired all-star cheer gym built on
+      confidence, character, teamwork, and championship-level performance.
+    </p>
+    <p>
+      ✨ Dreams. Discipline. Legacy. ✨
+    </p>
+  </div>
+</div>
 
-<footer>© Enchanted Legacy Cheer</footer>
+<footer>
+  © Enchanted Legacy Cheer
+</footer>
+
 </body>
 </html>
-```
-
----
-
-## 🎭 teams.html (CLICKABLE TEAM CARDS)
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Our Teams</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-  <h1>Meet Our Teams</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="teams.html">Teams</a>
-  </nav>
-</header>
-
-<section>
-<div class="card-grid">
-
-<div class="card">
-  <div class="placeholder">Uniform Photo</div>
-  <h3>Level 4 Youth – IncrediPower</h3>
-  <p>Power. Precision. Hero energy.</p>
-  <a class="button" href="team-template.html">View Team</a>
-</div>
-
-<div class="card">
-  <div class="placeholder">Uniform Photo</div>
-  <h3>Level 4 Senior – Queen of Hearts</h3>
-  <p>Bold. Fearless. Royal villains.</p>
-  <a class="button" href="team-template.html">View Team</a>
-</div>
-
-<!-- Duplicate cards for all teams -->
-
-</div>
-</section>
-
-<footer>© Enchanted Legacy Cheer</footer>
-</body>
-</html>
-```
-
----
-
-## 👑 team-template.html (INDIVIDUAL TEAM PAGE)
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Team Profile</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-  <h1>Queen of Hearts – Senior Level 4</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="teams.html">Teams</a>
-  </nav>
-</header>
-
-<section>
-<div class="card">
-  <h2>Team Theme</h2>
-  <p>Disney Villain royalty with fierce confidence and dramatic performance.</p>
-</div>
-
-<div class="card">
-  <h2>Uniform</h2>
-  <div class="placeholder">Uniform Front & Back</div>
-</div>
-
-<div class="card">
-  <h2>Team Gallery</h2>
-  <div class="placeholder">Action Photos / Gym Photos</div>
-</div>
-
-<div class="card">
-  <h2>Skill Focus</h2>
-  <p>Elite stunting, aggressive tumbling, sharp motions, performance intensity.</p>
-</div>
-</section>
-
-<footer>© Enchanted Legacy Cheer</footer>
-</body>
-</html>
-```
-
----
-
-✨ This setup lets you:
-- Click **each team** → its own page
-- Drop in photos later without redesigning
-- Add Disney colors per team easily
-- Expand forever (more pages, galleries, videos)
-
-
