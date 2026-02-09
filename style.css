@@ -100,4 +100,15 @@ footer {
   padding: 15px;
   margin-top: 40px;
 }
+.hero img {
+  width: 280px;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 102, 178, 0.6);
+  animation: sparkle 3s infinite alternate;
+}
+
+@keyframes sparkle {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
 
