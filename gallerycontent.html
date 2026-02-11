@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Media Gallery | Enchanted Legacy Cheer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #111;
+  color: white;
+  text-align: center;
+}
+
+.gallery-header {
+  padding: 60px 20px;
+  background: linear-gradient(135deg,#ff008c,#7b00ff,#00d4ff);
+}
+
+.gallery-header h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+.gallery-grid {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.gallery-item {
+  background: #222;
+  border-radius: 20px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #888;
+  transition: 0.3s;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  background: #333;
+}
+</style>
+</head>
+
+<body>
+
+<div class="gallery-header">
+  <h1>Enchanted Legacy Media</h1>
+  <p>Private Parent Access</p>
+</div>
+
+<div class="gallery-grid">
+  <div class="gallery-item">Competition Photos</div>
+  <div class="gallery-item">Practice Photos</div>
+  <div class="gallery-item">Uniform Reveal</div>
+  <div class="gallery-item">Team Bonding</div>
+  <div class="gallery-item">Stunt Sequences</div>
+  <div class="gallery-item">Championship Moments</div>
+</div>
+
+</body>
+</html>
 
