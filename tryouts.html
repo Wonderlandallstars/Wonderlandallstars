@@ -5,127 +5,90 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tryouts | Enchanted Legacy Cheer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff4da6, #7a5cff, #00c2ff);
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff008c, #7b00ff, #00d4ff);
     color: white;
-    overflow-x: hidden;
-}
-
-/* Glitter Stars */
-.star {
-    position: fixed;
-    width: 4px;
-    height: 4px;
-    background: white;
-    border-radius: 50%;
-    animation: sparkle 3s infinite ease-in-out;
-}
-@keyframes sparkle {
-    0%,100% { opacity: 0.2; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.8); }
-}
-
-/* Castle silhouette */
-.castle {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    opacity: 0.15;
 }
 
 /* Header */
 h1 {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 70px;
+    letter-spacing: 3px;
     text-align: center;
-    font-size: 50px;
-    margin-top: 40px;
+    margin: 40px 0;
 }
 
-/* Sections */
+/* Section Styling */
 .section {
     width: 85%;
-    margin: 20px auto;
-    background: rgba(255,255,255,0.15);
-    padding: 20px;
+    margin: 25px auto;
+    padding: 30px;
     border-radius: 20px;
+    background: rgba(255,255,255,0.12);
     backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.section:hover {
+    transform: scale(1.01);
 }
 
 .section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
     cursor: pointer;
-    font-family: 'Fredoka One', cursive;
 }
 
 .content {
     display: none;
-    text-align: left;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 ul {
-    padding-left: 20px;
+    margin: 10px 0 20px 20px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Highlight Text */
+.note {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #fff9c4;
 }
 
 /* Button */
 .button {
     display: inline-block;
-    margin: 30px auto;
-    padding: 15px 30px;
-    background: #fff700;
-    color: black;
+    padding: 15px 35px;
+    background: white;
+    color: #7b00ff;
     font-weight: bold;
-    border-radius: 25px;
+    border-radius: 30px;
     text-decoration: none;
+    margin-top: 20px;
     transition: 0.3s;
 }
 
 .button:hover {
-    background: #ffcc00;
+    background: #ffe600;
     transform: scale(1.05);
 }
 
-/* Form */
-form {
-    text-align: center;
-}
-
-input, select {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    border: none;
-    width: 250px;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-    h1 { font-size: 32px; }
+    h1 { font-size: 45px; }
     .section { width: 95%; }
 }
 </style>
-</head>
-
-<body>
-
-<h1>✨ Enchanted Legacy Tryouts ✨</h1>
-
-<!-- Glitter Stars Script Generated -->
-<script>
-for (let i = 0; i < 50; i++) {
-    let star = document.createElement("div");
-    star.className = "star";
-    star.style.top = Math.random() * 100 + "vh";
-    star.style.left = Math.random() * 100 + "vw";
-    star.style.animationDuration = (Math.random() * 3 + 2) + "s";
-    document.body.appendChild(star);
-}
-</script>
-
-<!-- Dropdown Sections -->
 
 <script>
 function toggleSection(id) {
@@ -134,18 +97,40 @@ function toggleSection(id) {
 }
 </script>
 
+</head>
+<body>
+
+<h1>ELITE TRYOUT REQUIREMENTS</h1>
+
+<div class="section">
+<h2 onclick="toggleSection('general')">General Tryout Format ▼</h2>
+<div class="content" id="general">
+<p class="note">
+Athletes will perform:
+• 2 Standing Tumbling Passes (chosen from the list)
+• 2 Running Tumbling Passes (chosen from the list)
+• 3 Jumps (at least 2 different types)
+</p>
+<p><strong>Jumps Required:</strong></p>
+<ul>
+<li>Toe Touch</li>
+<li>Hurdler (Left or Right)</li>
+<li>Pike</li>
+</ul>
+</div>
+</div>
+
 <div class="section">
 <h2 onclick="toggleSection('prep')">Prep & Novice ▼</h2>
 <div class="content" id="prep">
-<p><strong>Standing & Running Skills:</strong></p>
 <ul>
 <li>Back Walkover</li>
 <li>Front Walkover</li>
 <li>Cartwheel</li>
-<li>Forward & Backward Rolls</li>
 <li>Round Off</li>
+<li>Forward Rolls</li>
+<li>Backward Rolls</li>
 </ul>
-<p><strong>Jumps:</strong> Toe Touch • Hurdler • Pike</p>
 </div>
 </div>
 
@@ -169,6 +154,7 @@ function toggleSection(id) {
 <ul>
 <li>Back Walkover → Back Handspring</li>
 <li>Back Handspring Step-Out → Back Walkover → Back Handspring</li>
+<li>Back Extension Roll → Back Walkover → Back Handsprings</li>
 <li>Round Off → 3 Back Handsprings</li>
 <li>Front Walkover → Round Off → 2 Back Handsprings</li>
 <li>Flyspring / Bounder</li>
@@ -182,8 +168,11 @@ function toggleSection(id) {
 <ul>
 <li>Standing 3 Back Handsprings</li>
 <li>Jump → 2 Back Handsprings</li>
+<li>Back Handspring → Jump → Back Handspring</li>
 <li>Aerial</li>
+<li>Front Walkover → Aerial</li>
 <li>Round Off → Back Handspring → Tuck</li>
+<li>Front Walkover → Round Off → Back Handspring → Tuck</li>
 </ul>
 </div>
 </div>
@@ -194,8 +183,10 @@ function toggleSection(id) {
 <ul>
 <li>Standing Back Tuck</li>
 <li>Back Handspring → Back Tuck</li>
-<li>Punch Front → Layout</li>
-<li>Round Off → Layout</li>
+<li>Jump → Back Handspring → Tuck</li>
+<li>Punch Front → Step Out → Round Off → Back Handspring → Layout</li>
+<li>Round Off → Back Handspring → Layout</li>
+<li>Round Off → Whip → Back Handspring Series → Layout</li>
 </ul>
 </div>
 </div>
@@ -204,9 +195,12 @@ function toggleSection(id) {
 <h2 onclick="toggleSection('l5')">Level 5 ▼</h2>
 <div class="content" id="l5">
 <ul>
-<li>Back Handspring Series → Layout</li>
-<li>Round Off → Full</li>
-<li>Punch Front → Full</li>
+<li>Back Handspring → Whip → Back Handspring Series → Layout</li>
+<li>Jump → Back Handspring Series → Layout</li>
+<li>Back Spring → Whip → Back Spring Series → Layout</li>
+<li>Front Walkover → Round Off → Back Handspring → Full</li>
+<li>Round Off → Whip → Back Handspring → Full</li>
+<li>Punch Front → Step Out → Round Off → Back Handspring → Full</li>
 </ul>
 </div>
 </div>
@@ -215,37 +209,15 @@ function toggleSection(id) {
 <h2 onclick="toggleSection('l6')">Level 6 ▼</h2>
 <div class="content" id="l6">
 <ul>
+<li>Jump → Back Tuck</li>
+<li>Back Spring Series → Full</li>
 <li>Standing Full</li>
+<li>Round Off → Arabian → Round Off → Back Handspring → Full</li>
 <li>Round Off → Double Full</li>
-<li>Arabian → Full</li>
+<li>Round Off → Back Handspring → Full → Back Handspring Series → Full</li>
 </ul>
 </div>
 </div>
-
-<!-- Registration Form -->
-<div class="section">
-<h2>Register for Tryouts</h2>
-<form>
-<input type="text" placeholder="Athlete Name" required><br>
-<input type="number" placeholder="Age" required><br>
-<select required>
-<option value="">Select Level Interest</option>
-<option>Prep</option>
-<option>Novice</option>
-<option>Level 1</option>
-<option>Level 2</option>
-<option>Level 3</option>
-<option>Level 4</option>
-<option>Level 5</option>
-<option>Level 6</option>
-</select><br>
-<input type="email" placeholder="Parent Email" required><br>
-<button class="button" type="submit">Submit Registration ✨</button>
-</form>
-</div>
-
-<!-- Castle Silhouette -->
-<img class="castle" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Castle_silhouette.svg">
 
 </body>
 </html>
