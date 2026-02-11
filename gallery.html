@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Media Gallery</title>
+<style>
+body {
+  margin:0;
+  background:black;
+  color:white;
+  text-align:center;
+  font-family:Montserrat;
+}
+.gallery { display:none; }
+img { width:300px; margin:10px; border-radius:15px; }
+</style>
+
+<script>
+function checkPassword() {
+  var password = prompt("Enter Media Password:");
+  if (password === "Legacy2026") {
+    document.getElementById("gallery").style.display = "block";
+  } else {
+    alert("Incorrect Password");
+  }
+}
+</script>
+
+</head>
+<body onload="checkPassword()">
+
+<!-- NAV HERE -->
+
+<h1>Media Gallery</h1>
+
+<div id="gallery" class="gallery">
+<img src="placeholder1.jpg">
+<img src="placeholder2.jpg">
+<img src="placeholder3.jpg">
+</div>
+
+</body>
+</html>
