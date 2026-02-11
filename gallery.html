@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Media Gallery</title>
+<meta charset="UTF-8">
+<title>Media Gallery | Enchanted Legacy Cheer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
 body {
-  margin:0;
-  background:black;
-  color:white;
-  text-align:center;
-  font-family:Montserrat;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg,#ff008c,#7b00ff,#00d4ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
 }
-.gallery { display:none; }
-img { width:300px; margin:10px; border-radius:15px; }
+
+.gallery-box {
+  background: white;
+  color: black;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  width: 350px;
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  margin-top: 15px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  background: #ff008c;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
 </style>
+</head>
+
+<body>
+
+<div class="gallery-box">
+  <h2>🔒 Media Gallery Access</h2>
+  <p>Please enter the parent password.</p>
+
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <br>
+  <button onclick="checkPassword()">Enter</button>
+</div>
 
 <script>
 function checkPassword() {
-  var password = prompt("Enter Media Password:");
-  if (password === "Legacy2026") {
-    document.getElementById("gallery").style.display = "block";
+  const password = document.getElementById("passwordInput").value;
+
+  if (password === "legacyfamily2026") {
+    window.location.href = "gallery-content.html";
   } else {
-    alert("Incorrect Password");
+    alert("Incorrect password");
   }
 }
 </script>
-
-</head>
-<body onload="checkPassword()">
-
-<!-- NAV HERE -->
-
-<h1>Media Gallery</h1>
-
-<div id="gallery" class="gallery">
-<img src="placeholder1.jpg">
-<img src="placeholder2.jpg">
-<img src="placeholder3.jpg">
-</div>
 
 </body>
 </html>
