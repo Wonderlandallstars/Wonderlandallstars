@@ -117,3 +117,53 @@ body {
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+/* ===============================
+   🌈 Magical Navigation Bar
+================================= */
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #ff66cc, #9966ff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.nav-logo {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffe6f7;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
