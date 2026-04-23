@@ -1,3 +1,169 @@
 <!DOCTYPE html>
-7e77f1d61adfe1a32001a831344dee7e60531b83
-   
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Enchanted Legacy Cheer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg,#ff008c,#7b00ff,#00d4ff);
+  color: white;
+}
+
+/* ================= NAVIGATION ================= */
+
+.top-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 25px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.nav-left {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  color: #ffe600;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero img {
+  width: 220px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 90px;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 20px;
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+.button {
+  margin-top: 35px;
+  padding: 16px 40px;
+  border-radius: 40px;
+  background: #ffe600;
+  color: black;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.button:hover {
+  transform: scale(1.08);
+}
+
+/* ================= INFO SECTION ================= */
+
+.home-info {
+  background: white;
+  color: black;
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.home-info h2 {
+  font-size: 40px;
+  margin-bottom: 60px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.info-card {
+  background: linear-gradient(135deg,#ff008c,#7b00ff);
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="top-nav">
+  <div class="nav-left">✨ Enchanted Legacy</div>
+  <div class="nav-right">
+    <a href="teams.html">Teams</a>
+    <a href="tryouts.html">Tryouts</a>
+    <a href="tuition.html">Tuition</a>
+    <a href="season.html">Season</a>
+    <a href="gallery.html">Gallery</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="logo.png" alt="Enchanted Legacy Logo">
+  <h1>BUILDING CHAMPIONS. CREATING LEGENDS.</h1>
+  <p>Enchanted Legacy Cheer is an elite Disney-inspired Allstar program dedicated to excellence, strength, and confidence.</p>
+  <a href="tryouts.html" class="button">Join The Legacy</a>
+</div>
+
+<section class="home-info">
+  <h2>Why Choose Enchanted Legacy?</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>Elite Coaching</h3>
+      <p>From Prep to Level 6, we train champions at every stage.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Disney Magic</h3>
+      <p>Creative themes, powerful routines, unforgettable performances.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Confidence & Character</h3>
+      <p>We build strong athletes and even stronger leaders.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
