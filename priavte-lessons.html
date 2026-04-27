@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Lessons | Enchanted Legacy Cheer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ff008c, #7b00ff, #00d4ff);
+  color: white;
+}
+
+/* Navigation */
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-left {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  color: #ffe600;
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+.page-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 70px;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Content */
+.content-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Info Section */
+.info-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  margin-top: 0;
+  color: #ffe600;
+}
+
+.info-section p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Coach Grid */
+.coach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.coach-card {
+  background: linear-gradient(135deg, #ff66cc, #9966ff);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.coach-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.coach-avatar {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+
+.coach-card h3 {
+  font-size: 24px;
+  margin: 0 0 5px 0;
+  color: #ffe600;
+}
+
+.coach-card .specialty {
+  font-size: 14px;
+  color: rgba(255, 230, 0, 0.8);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.coach-card p {
+  font-size: 14px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.book-btn {
+  padding: 10px 25px;
+  background: white;
+  color: #9966ff;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+.book-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.pricing-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.pricing-card h3 {
+  font-size: 18px;
+  color: #ffe600;
+  margin-top: 0;
+}
+
+.pricing-card .price {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ffe600;
+  margin: 15px 0;
+}
+
+.pricing-card p {
+  font-size: 14px;
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+/* Form Section */
+.form-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ffe600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ffe600;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 15px 50px;
+  background: #ffe600;
+  color: #7b00ff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 20px rgba(255, 230, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 45px; }
+  .info-section h2 { font-size: 30px; }
+  .coach-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-left">✨ Enchanted Legacy</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About</a>
+    <a href="teams.html">Teams</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="registration.html">Registration</a>
+    <a href="private-lessons.html">Private Lessons</a>
+    <a href="pro-shop.html">Shop</a>
+  </div>
+</header>
+
+<div class="page-header">
+  <h1>PRIVATE LESSONS</h1>
+  <p>One-on-One Coaching Excellence</p>
+</div>
+
+<div class="content-section">
+  <!-- Welcome Section -->
+  <div class="info-section">
+    <h2>✨ Personalized Training Just For You</h2>
+    <p>Get dedicated, one-on-one coaching with our expert instructors! Private lessons are perfect for athletes who want to accelerate their skills, work on specific techniques, or receive personalized attention in a focused environment.</p>
+    <p>Whether you're a beginner wanting to build confidence or an advanced athlete perfecting advanced skills, we have the right coach for you!</p>
+  </div>
+
+  <!-- Meet Our Coaches -->
+  <div class="info-section">
+    <h2>🌟 Meet Our Elite Coaches</h2>
+    <p>Choose from our experienced team of certified coaches, each specializing in different areas of cheerleading.</p>
+    
+    <div class="coach-grid">
+      <div class="coach-card">
+        <div class="coach-avatar">🏅</div>
+        <h3>Coach Diamond</h3>
+        <div class="specialty">Tumbling Specialist</div>
+        <p><strong>Specialty:</strong> Advanced tumbling, back handsprings, aerials, layouts</p>
+        <p><strong>Experience:</strong> 12+ years competitive cheer</p>
+        <p><strong>Rate:</strong> $50/hour</p>
+        <button class="book-btn" onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'});">Book Now</button>
+      </div>
+
+      <div class="coach-card">
+        <div class="coach-avatar">🎯</div>
+        <h3>Coach Titanium</h3>
+        <div class="specialty\">Stunting Specialist</div>
+        <p><strong>Specialty:</strong> Stunting formations, flyer techniques, pyramid safety</p>
+        <p><strong>Experience:</strong> 10+ years competitive cheer</p>
+        <p><strong>Rate:</strong> $55/hour</p>
+        <button class="book-btn" onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'});">Book Now</button>
+      </div>
+
+      <div class="coach-card">
+        <div class="coach-avatar">💃</div>
+        <h3>Coach Aurora</h3>
+        <div class="specialty\">Dance & Technique Coach</div>
+        <p><strong>Specialty:</strong> Dance choreography, technique refinement, performance skills</p>
+        <p><strong>Experience:</strong> 8+ years as choreographer and performer</p>
+        <p><strong>Rate:</strong> $45/hour</p>
+        <button class="book-btn" onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'});">Book Now</button>
+      </div>
+
+      <div class="coach-card">
+        <div class="coach-avatar\">💪</div>
+        <h3>Coach Atlas</h3>
+        <div class="specialty\">Conditioning & Strength Coach</div>
+        <p><strong>Specialty:</strong> Strength building, flexibility, athletic conditioning</p>
+        <p><strong>Experience:</strong> 9+ years sports conditioning</p>
+        <p><strong>Rate:</strong> $40/hour</p>
+        <button class="book-btn" onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'});">Book Now</button>
+      </div>
+
+      <div class="coach-card">
+        <div class="coach-avatar\">🎪</div>
+        <h3>Coach Luminara</h3>
+        <div class="specialty\">All-Around Instructor</div>
+        <p><strong>Specialty:</strong> Full skill development, beginner to intermediate level</p>
+        <p><strong>Experience:</strong> 7+ years teaching all cheer disciplines</p>
+        <p><strong>Rate:</strong> $42/hour</p>
+        <button class="book-btn" onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'});">Book Now</button>
+      </div>
+
+      <div class="coach-card">
+        <div class="coach-avatar\">🚀</div>
+        <h3>Coach Phoenix</h3>
+        <div class="specialty\">Advanced Skills Coach</div>
+        <p><strong>Specialty:</strong> Elite-level training, advanced progressions</p>
+        <p><strong>Experience:</strong> 15+ years national competition</p>
+        <p><strong>Rate:</strong> $60/hour</p>
+        <button class="book-btn" onclick="document.getElementById('booking-form').scrollIntoView({behavior: 'smooth'});">Book Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Section -->
+  <div class="info-section">
+    <h2>💰 Pricing</h2>
+    <p>Our private lesson rates are competitive and flexible. Choose packages or pay-per-lesson.</p>
+    
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Single Session</h3>
+        <div class="price">$40-$60</div>
+        <p>One-hour lesson with coach of choice</p>
+        <p>Perfect for trying it out!</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3>4-Pack Bundle</h3>
+        <div class="price">$150-$220</div>
+        <p>4 one-hour lessons</p>
+        <p>Save 5% vs single sessions</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3>8-Pack Bundle</h3>
+        <div class="price">$290-$450</div>
+        <p>8 one-hour lessons</p>
+        <p>Save 10% vs single sessions</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Monthly Plan</h3>
+        <div class="price">$160-$240</div>
+        <p>4 lessons per month</p>
+        <p>Best value for regular training</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <div class="info-section" id="booking-form">
+    <h2>📅 Book Your Lesson</h2>
+    <p>Fill out the form below to schedule your private lesson. We'll confirm your appointment within 24 hours!</p>
+    
+    <div class="form-section">
+      <form>
+        <div class="form-group">
+          <label for="student-name">Student Name *</label>
+          <input type="text" id="student-name" name="student-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="student-age">Student Age *</label>
+          <input type="text" id="student-age" name="student-age" placeholder="e.g., 10" required>
+        </div>
+
+        <div class="form-group">
+          <label for="coach">Choose Your Coach *</label>
+          <select id="coach" name="coach" required>
+            <option value="">-- Select Coach --</option>
+            <option value="diamond">Coach Diamond - Tumbling Specialist ($50/hr)</option>
+            <option value="titanium">Coach Titanium - Stunting Specialist ($55/hr)</option>
+            <option value="aurora">Coach Aurora - Dance & Technique ($45/hr)</option>
+            <option value="atlas">Coach Atlas - Conditioning & Strength ($40/hr)</option>
+            <option value="luminara">Coach Luminara - All-Around Instructor ($42/hr)</option>
+            <option value="phoenix">Coach Phoenix - Advanced Skills ($60/hr)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="lesson-date">Preferred Lesson Date *</label>
+          <input type="date" id="lesson-date" name="lesson-date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lesson-time">Preferred Time *</label>
+          <select id="lesson-time" name="lesson-time" required>
+            <option value="">-- Select Time --</option>
+            <option value="9am">9:00 AM</option>
+            <option value="10am">10:00 AM</option>
+            <option value="11am">11:00 AM</option>
+            <option value="12pm">12:00 PM</option>
+            <option value="1pm">1:00 PM</option>
+            <option value="2pm">2:00 PM</option>
+            <option value="3pm">3:00 PM</option>
+            <option value="4pm">4:00 PM</option>
+            <option value="5pm">5:00 PM</option>
+            <option value="6pm">6:00 PM</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="focus-area">What's Your Focus Area? *</label>
+          <select id="focus-area" name="focus-area" required>
+            <option value="">-- Select Focus --</option>
+            <option value="tumbling">Tumbling</option>
+            <option value="stunting">Stunting</option>
+            <option value="dance">Dance</option>
+            <option value="conditioning">Conditioning</option>
+            <option value="all-around">All-Around Development</option>
+            <option value="other">Other (describe below)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="parent-name">Parent/Guardian Name *</label>
+          <input type="text" id="parent-name" name="parent-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="parent-email">Parent/Guardian Email *</label>
+          <input type="email" id="parent-email" name="parent-email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="parent-phone">Parent/Guardian Phone *</label>
+          <input type="tel" id="parent-phone" name="parent-phone" placeholder="(123) 456-7890" required>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Additional Notes or Questions</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Tell us about specific goals or concerns..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Book Lesson</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="info-section">
+    <h2>❓ Frequently Asked Questions</h2>
+    
+    <h3 style="color: #ffe600; margin-top: 20px;">What's the minimum age for private lessons?</h3>
+    <p>We accept students ages 5 and up! Younger students may benefit from shorter sessions (30 minutes) while they build focus and attention span.</p>
+
+    <h3 style="color: #ffe600;">Can I request a specific coach?</h3>
+    <p>Absolutely! We encourage you to choose the coach whose specialty matches your goals. If your preferred coach is unavailable, we'll help schedule as soon as possible.</p>
+
+    <h3 style="color: #ffe600;">Where do lessons take place?</h3>
+    <p>All private lessons are held at our state-of-the-art training facility. We have dedicated spaces for individual coaching to ensure a focused training environment.</p>
+
+    <h3 style="color: #ffe600;">What if I need to cancel?</h3>
+    <p>Cancellations made 48 hours in advance receive a full refund or reschedule credit. Late cancellations may incur a fee.</p>
+
+    <h3 style="color: #ffe600;">Can siblings share a lesson?</h3>
+    <p>Yes! Group lessons for family members can be arranged at a slightly higher rate. Contact us for details!</p>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="info-section">
+    <h2>📞 Questions? Get In Touch!</h2>
+    <p><strong>Email:</strong> lessons@enchantedlegacycheer.com</p>
+    <p><strong>Phone:</strong> (555) 123-4567</p>
+    <p><strong>Hours:</strong> Mon-Fri 3:00 PM - 8:00 PM | Sat-Sun 10:00 AM - 2:00 PM</p>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 30px 20px; border-top: 2px solid rgba(255, 255, 255, 0.2); margin-top: 50px;">
+  <p>© 2026 Enchanted Legacy Cheer | Personalized Training. Elite Results. ✨</p>
+</footer>
+
+</body>
+</html>
