@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration & Forms | Enchanted Legacy Cheer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ff008c, #7b00ff, #00d4ff);
+  color: white;
+}
+
+/* Navigation */
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-left {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  color: #ffe600;
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+.page-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 70px;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Content */
+.content-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Card Styles */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.card h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  margin-top: 0;
+  color: #ffe600;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Registration Buttons */
+.registration-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.reg-button {
+  background: linear-gradient(135deg, #ff66cc, #9966ff);
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reg-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.reg-button h3 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+.reg-button p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Form Section */
+.form-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #ffe600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #ffe600;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Checkbox/Radio */
+.checkbox-group {
+  margin: 15px 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 400;
+  color: white;
+}
+
+/* Submit Button */
+.submit-btn {
+  padding: 15px 50px;
+  background: #ffe600;
+  color: #7b00ff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 5px 20px rgba(255, 230, 0, 0.4);
+}
+
+/* Info List */
+.info-list {
+  background: linear-gradient(135deg, #ff008c, #7b00ff);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.info-list ul {
+  margin: 10px 0;
+  padding-left: 30px;
+}
+
+.info-list li {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+/* Pricing Table */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pricing-table thead {
+  background: linear-gradient(135deg, #ff66cc, #9966ff);
+}
+
+.pricing-table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.pricing-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pricing-table tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 45px; }
+  .card h2 { font-size: 30px; }
+  .registration-buttons { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-left">✨ Enchanted Legacy</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About</a>
+    <a href="teams.html">Teams</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="registration.html">Registration</a>
+    <a href="pro-shop.html">Shop</a>
+  </div>
+</header>
+
+<div class="page-header">
+  <h1>REGISTRATION & FORMS</h1>
+  <p>Join Enchanted Legacy Today!</p>
+</div>
+
+<div class="content-section">
+  <!-- Quick Registration Options -->
+  <div class="card">
+    <h2>🎯 Get Started</h2>
+    <p>Choose your registration option below:</p>
+    <div class="registration-buttons">
+      <button class="reg-button" onclick="document.getElementById('new-athlete').scrollIntoView({behavior: 'smooth'});">
+        <h3>➕ New Athlete</h3>
+        <p>Join Enchanted Legacy for the first time</p>
+      </button>
+      <button class="reg-button" onclick="document.getElementById('returning-athlete').scrollIntoView({behavior: 'smooth'});">
+        <h3>🔄 Returning Athlete</h3>
+        <p>Renew your membership for next season</p>
+      </button>
+      <button class="reg-button" onclick="document.getElementById('tuition-info').scrollIntoView({behavior: 'smooth'});">
+        <h3>💰 Tuition Info</h3>
+        <p>View pricing and payment options</p>
+      </button>
+    </div>
+  </div>
+
+  <!-- New Athlete Registration -->
+  <div class="card" id="new-athlete">
+    <h2>➕ New Athlete Registration</h2>
+    <p>Welcome to Enchanted Legacy! Please complete the following form to register for tryouts or a team.</p>
+    
+    <div class="form-section">
+      <form>
+        <div class="form-group">
+          <label for="athlete-name">Athlete's Full Name *</label>
+          <input type="text" id="athlete-name" name="athlete-name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="athlete-age">Age (as of December 31, 2026) *</label>
+          <input type="text" id="athlete-age" name="athlete-age" placeholder="e.g., 8" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="athlete-level">Current Cheer Level *</label>
+          <select id="athlete-level" name="athlete-level" required>
+            <option value="">-- Select Level --</option>
+            <option value="no-experience">No Cheer Experience</option>
+            <option value="prep">Prep/Novice</option>
+            <option value="level-1">Level 1</option>
+            <option value="level-2">Level 2</option>
+            <option value="level-3">Level 3</option>
+            <option value="level-4">Level 4</option>
+            <option value="level-5">Level 5</option>
+            <option value="level-6">Level 6</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="parent-name">Parent/Guardian Name *</label>
+          <input type="text" id="parent-name" name="parent-name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="parent-email">Parent/Guardian Email *</label>
+          <input type="email" id="parent-email" name="parent-email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="parent-phone">Parent/Guardian Phone *</label>
+          <input type="tel" id="parent-phone" name="parent-phone" placeholder="(123) 456-7890" required>
+        </div>
+        
+        <div class="form-group">
+          <label>By registering, you agree to:</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="waiver" required>
+              I have read and agree to the liability waiver
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="rules" required>
+              I understand the team rules and expectations
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="communications">
+              I consent to receive emails and updates
+            </label>
+          </div>
+        </div>
+        
+        <button type="submit" class="submit-btn">Complete Registration</button>
+      </form>
+    </div>
+    
+    <div class="info-list">
+      <h3>What's Included:</h3>
+      <ul>
+        <li>Full access to team practices</li>
+        <li>Invitation to competitions</li>
+        <li>Team uniform (optional)</li>
+        <li>Access to parent portal</li>
+        <li>Team communications and updates</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Returning Athlete Registration -->
+  <div class="card" id="returning-athlete">
+    <h2>🔄 Returning Athlete Renewal</h2>
+    <p>Welcome back! Complete this form to renew your membership for the upcoming season.</p>
+    
+    <div class="form-section">
+      <form>
+        <div class="form-group">
+          <label for="return-name">Athlete's Full Name *</label>
+          <input type="text" id="return-name" name="return-name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="previous-team">Previous Team *</label>
+          <input type="text" id="previous-team" name="previous-team" placeholder="e.g., Royal Rebels" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="preferred-team">Preferred Team for Next Season *</label>
+          <select id="preferred-team" name="preferred-team" required>
+            <option value="">-- Select Team --</option>
+            <option value="same">Keep me on my current team</option>
+            <option value="level-up">Move me up a level</option>
+            <option value="different">Assign me to a different team</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="renewal-parent-name">Parent/Guardian Name *</label>
+          <input type="text" id="renewal-parent-name" name="renewal-parent-name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="renewal-parent-email">Parent/Guardian Email *</label>
+          <input type="email" id="renewal-parent-email" name="renewal-parent-email" required>
+        </div>
+        
+        <button type="submit" class="submit-btn">Renew Membership</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tuition Information -->
+  <div class="card" id="tuition-info">
+    <h2>💰 Tuition & Fees</h2>
+    <p>Pricing for the 2026 season. All prices include practice fees and team expenses.</p>
+    
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Monthly</th>
+          <th>Registration Fee</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tiny Twinkles (Prep)</td>
+          <td>$85</td>
+          <td>$50</td>
+          <td>2 hours/week</td>
+        </tr>
+        <tr>
+          <td>Mini Magic (Novice)</td>
+          <td>$105</td>
+          <td>$50</td>
+          <td>2.5 hours/week</td>
+        </tr>
+        <tr>
+          <td>Level 1</td>
+          <td>$125</td>
+          <td>$75</td>
+          <td>4.5 hours/week</td>
+        </tr>
+        <tr>
+          <td>Level 2</td>
+          <td>$150</td>
+          <td>$75</td>
+          <td>4.5 hours/week</td>
+        </tr>
+        <tr>
+          <td>Level 3</td>
+          <td>$175</td>
+          <td>$100</td>
+          <td>6 hours/week</td>
+        </tr>
+        <tr>
+          <td>Level 4</td>
+          <td>$200</td>
+          <td>$100</td>
+          <td>8 hours/week</td>
+        </tr>
+        <tr>
+          <td>Level 5</td>
+          <td>$225</td>
+          <td>$125</td>
+          <td>8 hours/week</td>
+        </tr>
+        <tr>
+          <td>Level 6</td>
+          <td>$250</td>
+          <td>$125</td>
+          <td>10 hours/week</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Additional Costs:</h3>
+    <div class="info-list" style="margin-top: 20px;">
+      <ul>
+        <li><strong>Uniform Package:</strong> $200-$300 (one-time, includes competition outfit)</li>
+        <li><strong>Competition Fees:</strong> $100-$300 per competition (varies by event)</li>
+        <li><strong>Team T-Shirt:</strong> $20-$30 (optional)</li>
+        <li><strong>Skills Clinic:</strong> $30-$50 per session</li>
+      </ul>
+    </div>
+
+    <h3>Payment Options:</h3>
+    <div class="info-list">
+      <ul>
+        <li>Monthly auto-pay (discount available)</li>
+        <li>Semester payment (Jan-June, Sept-Dec)</li>
+        <li>Cash/Check</li>
+        <li>Credit/Debit Card</li>
+      </ul>
+    </div>
+
+    <h3>Financial Assistance:</h3>
+    <p>We believe every athlete deserves the opportunity to cheer. Scholarships and payment plans are available. Please contact our director to discuss options.</p>
+  </div>
+
+  <!-- Forms & Documents -->
+  <div class="card">
+    <h2>📋 Forms & Documents</h2>
+    <p>Before starting, please complete the following documents:</p>
+    
+    <div style="margin-top: 30px;">
+      <h3>Required Forms:</h3>
+      <div class="info-list">
+        <ul>
+          <li><strong>Liability Waiver:</strong> <a href="#" style="color: #ffe600; text-decoration: underline;">Download PDF</a> - Must be signed by parent/guardian</li>
+          <li><strong>Emergency Contact Form:</strong> <a href="#" style="color: #ffe600; text-decoration: underline;">Download PDF</a> - In case of medical emergency</li>
+          <li><strong>Medical Release:</strong> <a href="#" style="color: #ffe600; text-decoration: underline;">Download PDF</a> - Authorization for medical treatment</li>
+          <li><strong>Code of Conduct:</strong> <a href="#" style="color: #ffe600; text-decoration: underline;">Download PDF</a> - Team rules and expectations</li>
+        </ul>
+      </div>
+
+      <h3>Optional Forms:</h3>
+      <div class="info-list">
+        <ul>
+          <li><strong>Dietary Restrictions:</strong> <a href="#" style="color: #ffe600; text-decoration: underline;">Download PDF</a> - For team events/meals</li>
+          <li><strong>Scholarship Application:</strong> <a href="#" style="color: #ffe600; text-decoration: underline;">Download PDF</a> - For financial assistance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Questions -->
+  <div class="card">
+    <h2>❓ Questions?</h2>
+    <p>If you have any questions about registration, tuition, or our programs, please don't hesitate to reach out:</p>
+    <p><strong>Email:</strong> info@enchantedlegacycheer.com</p>
+    <p><strong>Phone:</strong> (555) 123-4567</p>
+    <p><strong>Hours:</strong> Mon-Fri 3:00 PM - 7:00 PM</p>
+  </div>
+</div>
+
+<footer style="text-align: center; padding: 30px 20px; border-top: 2px solid rgba(255, 255, 255, 0.2); margin-top: 50px;">
+  <p>© 2026 Enchanted Legacy Cheer | Together, we build champions. ✨</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Enchanted Legacy Cheer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ff008c, #7b00ff, #00d4ff);
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* Navigation */
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-left {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  color: #ffe600;
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+.page-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 70px;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Content Section */
+.content-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.section-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.section-card h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  margin-top: 0;
+  color: #ffe600;
+}
+
+.section-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.section-card ul {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+.section-card li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Staff Grid */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.staff-card {
+  background: linear-gradient(135deg, #ff66cc, #9966ff);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.staff-card:hover {
+  transform: scale(1.05);
+}
+
+.staff-card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.staff-card .role {
+  color: #ffe600;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.staff-card p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.value-box {
+  background: linear-gradient(135deg, #ff008c, #7b00ff);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.value-box h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.value-box p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  margin-top: 50px;
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 45px; }
+  .section-card h2 { font-size: 30px; }
+  .top-nav { padding: 10px 20px; }
+  .nav-right a { margin-left: 15px; font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-left">✨ Enchanted Legacy</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About</a>
+    <a href="teams.html">Teams</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="registration.html">Registration</a>
+    <a href="pro-shop.html">Shop</a>
+  </div>
+</header>
+
+<div class="page-header">
+  <h1>ABOUT ENCHANTED LEGACY</h1>
+  <p>Where Magic Meets Athleticism</p>
+</div>
+
+<div class="content-section">
+  <!-- Mission Section -->
+  <div class="section-card">
+    <h2>✨ Our Mission</h2>
+    <p>Enchanted Legacy Cheer is dedicated to building elite athletic champions while inspiring confidence, character, and leadership. We blend the artistry of Disney magic with the intensity of world-class competitive cheerleading.</p>
+    <p>Our program empowers young athletes to reach their full potential, both on and off the mat. Through rigorous training, creative choreography, and unwavering support, we create an environment where legends are born.</p>
+  </div>
+
+  <!-- History Section -->
+  <div class="section-card">
+    <h2>📖 Our Story</h2>
+    <p>Founded with a vision to bring Disney-inspired magic to the competitive cheer world, Enchanted Legacy has grown into a premier Allstar program serving athletes of all levels.</p>
+    <p>From our first tiny team to our elite Level 6 competitors, every athlete who joins our legacy becomes part of a family dedicated to excellence, creativity, and inclusion.</p>
+  </div>
+
+  <!-- Values Section -->
+  <div class="section-card">
+    <h2>💎 Our Core Values</h2>
+    <div class="values-grid">
+      <div class="value-box">
+        <h3>Excellence</h3>
+        <p>Pursuing perfection in every routine, every skill, every moment.</p>
+      </div>
+      <div class="value-box">
+        <h3>Teamwork</h3>
+        <p>United as one, stronger together, lifting each other up.</p>
+      </div>
+      <div class="value-box">
+        <h3>Confidence</h3>
+        <p>Believing in yourself and your teammates, shining bright.</p>
+      </div>
+      <div class="value-box">
+        <h3>Creativity</h3>
+        <p>Bringing Disney magic to life through innovative choreography.</p>
+      </div>
+      <div class="value-box">
+        <h3>Character</h3>
+        <p>Representing our legacy with integrity and respect.</p>
+      </div>
+      <div class="value-box">
+        <h3>Leadership</h3>
+        <p>Growing athletes who inspire and lead both on and off the mat.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Facilities Section -->
+  <div class="section-card">
+    <h2>🏢 Our Facilities</h2>
+    <p>Enchanted Legacy is located in a state-of-the-art training facility equipped with:</p>
+    <ul>
+      <li>Professional spring floors designed for tumbling and stunting safety</li>
+      <li>Multiple practice mats and training areas</li>
+      <li>Full-length mirrors for technique refinement</li>
+      <li>Comfortable viewing areas for parents</li>
+      <li>Modern climate-controlled training environment</li>
+      <li>Sound system for routine choreography</li>
+    </ul>
+  </div>
+
+  <!-- Coaching Staff Section -->
+  <div class="section-card">
+    <h2>🌟 Meet Our Coaching Staff</h2>
+    <p>Our experienced coaches are passionate about developing young athletes into champions. With years of competitive experience and specialized training certifications, our staff is dedicated to your success.</p>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <h3>Director</h3>
+        <div class="role">Program Leadership</div>
+        <p>Leading Enchanted Legacy with passion and vision, ensuring every athlete reaches their full potential.</p>
+      </div>
+      <div class="staff-card">
+        <h3>Head Coach</h3>
+        <div class="role">Technical Training</div>
+        <p>Master coach with years of competitive cheer experience and national recognition.</p>
+      </div>
+      <div class="staff-card">
+        <h3>Tumbling Coach</h3>
+        <div class="role">Skills Development</div>
+        <p>Specialist in flexibility, strength, and advanced tumbling progression.</p>
+      </div>
+      <div class="staff-card">
+        <h3>Stunting Coach</h3>
+        <div class="role">Advanced Techniques</div>
+        <p>Expert in safe, innovative stunting sequences and pyramid formations.</p>
+      </div>
+      <div class="staff-card">
+        <h3>Choreographer</h3>
+        <div class="role">Creative Direction</div>
+        <p>Bringing Disney magic and artistic vision to every routine.</p>
+      </div>
+      <div class="staff-card">
+        <h3>Conditioning Coach</h3>
+        <div class="role">Strength & Fitness</div>
+        <p>Developing athletic strength, flexibility, and injury prevention.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What Makes Us Different -->
+  <div class="section-card">
+    <h2>⭐ What Makes Us Different</h2>
+    <ul>
+      <li><strong>Disney-Inspired Themes:</strong> Every routine tells a magical story with creative choreography and stunning visuals.</li>
+      <li><strong>Elite Training:</strong> From Prep level through Level 6, we offer world-class instruction in all disciplines.</li>
+      <li><strong>Family Atmosphere:</strong> We're not just a gym—we're a family united by the love of cheer.</li>
+      <li><strong>Comprehensive Development:</strong> We focus on athletic excellence AND personal growth.</li>
+      <li><strong>Safe & Inclusive:</strong> Every athlete is valued, supported, and celebrated.</li>
+      <li><strong>Competition Success:</strong> Our teams compete at regional, national, and international levels.</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Enchanted Legacy Cheer. Built on magic, dedication, and dreams. ✨</p>
+</footer>
+
+</body>
+</html>

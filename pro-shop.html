@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Shop | Enchanted Legacy Cheer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ff008c, #7b00ff, #00d4ff);
+  color: white;
+}
+
+/* Navigation */
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.nav-left {
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  color: #ffe600;
+}
+
+/* Header */
+.page-header {
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+.page-header h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 70px;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Content */
+.content-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Info Section */
+.info-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-section h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  margin-top: 0;
+  color: #ffe600;
+}
+
+.info-section p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.product-image {
+  background: linear-gradient(135deg, #ff66cc, #9966ff);
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+}
+
+.product-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #ffe600;
+}
+
+.product-category {
+  font-size: 12px;
+  color: rgba(255, 230, 0, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 14px;
+  margin: 0 0 15px 0;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+.product-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffe600;
+  margin-bottom: 12px;
+}
+
+.product-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ff66cc, #9966ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-top: auto;
+}
+
+.product-button:hover {
+  transform: scale(1.05);
+}
+
+/* Category Section */
+.category-header {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 35px;
+  color: #ffe600;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid rgba(255, 230, 0, 0.5);
+  padding-bottom: 10px;
+}
+
+/* Filters */
+.filter-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.filter-btn.active {
+  background: #ffe600;
+  color: #7b00ff;
+  border-color: #ffe600;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 230, 0, 0.3);
+}
+
+/* Special Promotions */
+.promotion-banner {
+  background: linear-gradient(135deg, #ff008c, #7b00ff);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.promotion-banner h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  margin: 0 0 10px 0;
+  color: #ffe600;
+}
+
+.promotion-banner p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header h1 { font-size: 45px; }
+  .product-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  .filter-section { flex-direction: column; align-items: stretch; }
+  .filter-btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header class="top-nav">
+  <div class="nav-left">✨ Enchanted Legacy</div>
+  <div class="nav-right">
+    <a href="index.html">Home</a>
+    <a href="about-us.html">About</a>
+    <a href="teams.html">Teams</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="registration.html">Registration</a>
+    <a href="pro-shop.html">Shop</a>
+  </div>
+</header>
+
+<div class="page-header">
+  <h1>PRO SHOP</h1>
+  <p>Gear Up in Enchanted Legacy Style!</p>
+</div>
+
+<div class="content-section">
+  <!-- Welcome Section -->
+  <div class="info-section">
+    <h2>✨ Welcome to Our Shop</h2>
+    <p>Get decked out in official Enchanted Legacy gear! From team apparel to practice essentials, we have everything you need to represent our legacy with pride and style.</p>
+    <p><strong>All proceeds support our athlete development programs and competition opportunities.</strong></p>
+  </div>
+
+  <!-- Promotion Banner -->
+  <div class="promotion-banner">
+    <h3>🎉 SPECIAL: New Season Sale!</h3>
+    <p>Get 15% OFF team apparel with code: ENCHANTED2026</p>
+  </div>
+
+  <!-- Filter Section -->
+  <div class="filter-section">
+    <button class="filter-btn active">All Items</button>
+    <button class="filter-btn">Apparel</button>
+    <button class="filter-btn">Accessories</button>
+    <button class="filter-btn">Team Gear</button>
+    <button class="filter-btn">Clearance</button>
+  </div>
+
+  <!-- APPAREL SECTION -->
+  <div class="category-header">👕 Team Apparel</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image">👕</div>
+      <div class="product-info">
+        <span class="product-category">T-Shirt</span>
+        <h3>Classic Team Tee</h3>
+        <p class="product-description">Soft, comfortable 100% cotton t-shirt with embroidered Enchanted Legacy logo.</p>
+        <div class="product-price">$24.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🧢</div>
+      <div class="product-info">
+        <span class="product-category">Hat</span>
+        <h3>Team Baseball Cap</h3>
+        <p class="product-description">Adjustable cap with embroidered Enchanted Legacy design. Perfect for practice or casual wear.</p>
+        <div class="product-price">$18.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🏃‍♀️</div>
+      <div class="product-info">
+        <span class="product-category">Apparel</span>
+        <h3>Team Hoodie</h3>
+        <p class="product-description">Premium pullover hoodie with logo. Warm and stylish for before/after practice.</p>
+        <div class="product-price">$44.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">👖</div>
+      <div class="product-info">
+        <span class="product-category">Bottoms</span>
+        <h3>Team Sweatpants</h3>
+        <p class="product-description">Comfortable jogger-style pants with side pockets. Perfect for team events.</p>
+        <div class="product-price">$34.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">👟</div>
+      <div class="product-info">
+        <span class="product-category">Apparel</span>
+        <h3>Team Socks Pack</h3>
+        <p class="product-description">Set of 3 pairs of cushioned crew socks with team logo. Perfect for practice!</p>
+        <div class="product-price">$14.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">💪</div>
+      <div class="product-info">
+        <span class="product-category">Apparel</span>
+        <h3>Compression Shirt</h3>
+        <p class="product-description">Moisture-wicking compression wear for intense training sessions.</p>
+        <div class="product-price">$32.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACCESSORIES SECTION -->
+  <div class="category-header">✨ Accessories</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image">💼</div>
+      <div class="product-info">
+        <span class="product-category">Bag</span>
+        <h3>Team Duffel Bag</h3>
+        <p class="product-description">Large capacity duffel with logo embroidery. Perfect for carrying all your gear.</p>
+        <div class="product-price">$39.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🎒</div>
+      <div class="product-info">
+        <span class="product-category">Bag</span>
+        <h3>Backpack</h3>
+        <p class="product-description">Lightweight, spacious backpack with school and practice pocket compartments.</p>
+        <div class="product-price">$42.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">💎</div>
+      <div class="product-info">
+        <span class="product-category">Accessory</span>
+        <h3>Team Hair Bow</h3>
+        <p class="product-description">Sparkly hair bow in team colors. Match your outfit on competition day!</p>
+        <div class="product-price">$9.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🍯</div>
+      <div class="product-info">
+        <span class="product-category">Accessory</span>
+        <h3>Water Bottle</h3>
+        <p class="product-description">30oz insulated water bottle with team logo. Keeps drinks cold all practice long.</p>
+        <div class="product-price">$22.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🎽</div>
+      <div class="product-info">
+        <span class="product-category">Accessory</span>
+        <h3>Wristbands</h3>
+        <p class="product-description">Set of 4 team-colored wristbands. Show your spirit!</p>
+        <div class="product-price">$8.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🎤</div>
+      <div class="product-info">
+        <span class="product-category">Accessory</span>
+        <h3>Key Chain</h3>
+        <p class="product-description">Team logo keychain. A mini way to carry your Enchanted Legacy spirit.</p>
+        <div class="product-price">$6.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEAM GEAR SECTION -->
+  <div class="category-header">🏆 Team Gear & Equipment</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image">👟</div>
+      <div class="product-info">
+        <span class="product-category">Equipment</span>
+        <h3>Cheer Shoes</h3>
+        <p class="product-description">Professional cheer shoes with proper ankle support. Choose from multiple styles.</p>
+        <div class="product-price">$65.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🧤</div>
+      <div class="product-info">
+        <span class="product-category">Equipment</span>
+        <h3>Grip Gloves</h3>
+        <p class="product-description">Non-slip grip gloves for stunting. Essential safety equipment.</p>
+        <div class="product-price">$16.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">🩹</div>
+      <div class="product-info">
+        <span class="product-category">Equipment</span>
+        <h3>Tape & Wrap Set</h3>
+        <p class="product-description">Athletic tape and wrap for ankle/wrist support during training.</p>
+        <div class="product-price">$12.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">💪</div>
+      <div class="product-info">
+        <span class="product-category">Equipment</span>
+        <h3>Resistance Bands</h3>
+        <p class="product-description">Set of 4 resistance bands for strength training and conditioning.</p>
+        <div class="product-price">$18.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLEARANCE SECTION -->
+  <div class="category-header">🔴 Clearance Items</div>
+  <div class="product-grid">
+    <div class="product-card">
+      <div class="product-image">🏷️</div>
+      <div class="product-info">
+        <span class="product-category">Clearance</span>
+        <h3>Previous Season Tee</h3>
+        <p class="product-description">Classic design from last season. Limited quantities!</p>
+        <div class="product-price" style="text-decoration: line-through; font-size: 16px; color: rgba(255, 230, 0, 0.6);">$24.99</div>
+        <div class="product-price">$12.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">📦</div>
+      <div class="product-info">
+        <span class="product-category">Clearance</span>
+        <h3>Mystery Bundle</h3>
+        <p class="product-description">Surprise assortment of team items. Great value!</p>
+        <div class="product-price" style="text-decoration: line-through; font-size: 16px; color: rgba(255, 230, 0, 0.6);">$50.00</div>
+        <div class="product-price">$24.99</div>
+        <button class="product-button">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shopping Info -->
+  <div class="info-section" style="margin-top: 50px;">
+    <h2>🛒 Shopping Information</h2>
+    
+    <h3 style="color: #ffe600; margin-top: 20px;">Ordering Process:</h3>
+    <p>1. Browse our products and add items to your cart</p>
+    <p>2. Proceed to checkout</p>
+    <p>3. Enter your shipping and payment information</p>
+    <p>4. Receive your order within 5-7 business days</p>
+    
+    <h3 style="color: #ffe600; margin-top: 20px;">Shipping & Returns:</h3>
+    <p><strong>Shipping:</strong> Free shipping on orders over $50. Standard shipping $5.99</p>
+    <p><strong>Returns:</strong> 30-day return policy on all items. Must be in original condition.</p>
+    
+    <h3 style="color: #ffe600; margin-top: 20px;">Need Help?</h3>
+    <p><strong>Email:</strong> shop@enchantedlegacycheer.com</p>
+    <p><strong>Phone:</strong> (555) 123-4567</p>
+    <p><strong>Hours:</strong> Mon-Fri 2:00 PM - 6:00 PM</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Enchanted Legacy Cheer | Support Your Team. Represent Your Legacy. ✨</p>
+</footer>
+
+</body>
+</html>
