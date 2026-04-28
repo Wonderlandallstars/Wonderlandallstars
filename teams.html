@@ -2,15 +2,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Our Teams | Enchanted Legacy Cheer</title>
+<title>Our Teams | Wonderland All-Stars</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
 <style>
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg,#ff008c,#7b00ff,#00d4ff);
+  background: linear-gradient(135deg, #ff008c, #7b00ff, #00d4ff);
   color: white;
+  min-height: 100vh;
 }
 
 .top-nav {
@@ -30,31 +35,44 @@ body {
 .nav-left {
   font-weight: 800;
   font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 30px;
 }
 
 .nav-right a {
   color: white;
   text-decoration: none;
-  margin-left: 30px;
   font-weight: 600;
   transition: 0.3s;
+  font-size: 14px;
 }
 
 .nav-right a:hover {
   color: #ffe600;
+  transform: scale(1.05);
 }
 
 .page-header {
   text-align: center;
-  padding: 120px 20px 60px;
+  padding: 140px 20px 60px;
 }
 
 .page-header h1 {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 70px;
   letter-spacing: 2px;
-  margin: 0;
+  margin: 0 0 10px 0;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.page-header p {
+  font-size: 18px;
+  margin: 0;
+  color: #ffe600;
 }
 
 .container {
@@ -63,11 +81,25 @@ body {
   padding: 40px 20px;
 }
 
+.level-section {
+  margin-bottom: 50px;
+}
+
+.level-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  color: #ffe600;
+}
+
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  grid-auto-rows: 1fr;
 }
 
 .team-card {
@@ -76,45 +108,119 @@ body {
   border-radius: 15px;
   padding: 30px;
   text-align: center;
-  text-decoration: none;
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.2);
-  transition: 0.3s;
+  transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 220px;
 }
 
 .team-card:hover {
   transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.2);
   border-color: #ffe600;
+  box-shadow: 0 10px 30px rgba(255, 230, 0, 0.3);
 }
 
 .team-card h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 35px;
+  font-size: 32px;
   margin: 0 0 10px 0;
   letter-spacing: 1px;
+  word-wrap: break-word;
 }
 
 .team-card p {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: #ffe600;
   margin: 0;
+}
+
+.team-details {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.team-details.active {
+  display: flex;
+}
+
+.team-modal {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  border: 2px solid #ffe600;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #ffe600;
+  background: none;
+  border: none;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+.team-modal h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 45px;
+  color: #ffe600;
+  margin-top: 0;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.modal-content {
+  color: white;
+  line-height: 1.8;
+}
+
+.modal-content p {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.modal-content strong {
+  color: #ffe600;
 }
 
 footer {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 40px 20px;
-  text-align: center;
   border-top: 2px solid rgba(255, 255, 255, 0.2);
   margin-top: 60px;
 }
 
 footer h3 {
-  margin-top: 0;
   color: #ffe600;
+  margin-bottom: 15px;
 }
 
 .footer-content {
@@ -123,16 +229,12 @@ footer h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  text-align: left;
-}
-
-.footer-section h3 {
-  margin-bottom: 15px;
 }
 
 .footer-section p {
   margin: 8px 0;
   line-height: 1.6;
+  font-size: 14px;
 }
 
 .footer-section a {
@@ -145,47 +247,24 @@ footer h3 {
   text-decoration: underline;
 }
 
-.social-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.social-links a {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background: #ffe600;
-  color: #7b00ff;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.social-links a:hover {
-  transform: scale(1.1);
-}
-
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
 }
 </style>
 </head>
 <body>
 
 <header class="top-nav">
-  <div class="nav-left">✨ Enchanted Legacy</div>
+  <div class="nav-left">✨ Wonderland All-Stars</div>
   <div class="nav-right">
     <a href="index.html">Home</a>
     <a href="teams.html">Teams</a>
-    <a href="tryouts.html">Tryouts</a>
-    <a href="schedule.html">Schedule</a>
+    <a href="season.html">Season Info</a>
+    <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
   </div>
 </header>
@@ -196,86 +275,131 @@ footer h3 {
 </div>
 
 <div class="container">
-  <div class="team-grid">
-    <a href="team-details.html?team=royal-rebels" class="team-card">
-      <h2>Royal Rebels</h2>
-      <p>Level 1</p>
-    </a>
+  
+  <!-- NOVICE LEVEL -->
+  <div class="level-section">
+    <h2 class="level-title">Novice Level</h2>
+    <div class="team-grid">
+      <div class="team-card" onclick="showTeamDetails('minimagic')">
+        <h2>Mini Magic</h2>
+        <p>Ages 5-7</p>
+      </div>
+    </div>
+  </div>
 
-    <a href="team-details.html?team=glitter-knights" class="team-card">
-      <h2>Glitter Knights</h2>
-      <p>Level 1</p>
-    </a>
+  <!-- LEVEL 1 -->
+  <div class="level-section">
+    <h2 class="level-title">Level 1</h2>
+    <div class="team-grid">
+      <div class="team-card" onclick="showTeamDetails('royalrebels')">
+        <h2>Royal Rebels</h2>
+        <p>Level 1</p>
+      </div>
 
-    <a href="team-details.html?team=diamond-dynasty" class="team-card">
-      <h2>Diamond Dynasty</h2>
-      <p>Level 2</p>
-    </a>
+      <div class="team-card" onclick="showTeamDetails('glitterknights')">
+        <h2>Glitter Knights</h2>
+        <p>Level 1</p>
+      </div>
 
-    <a href="team-details.html?team=midnight-majesty" class="team-card">
-      <h2>Midnight Majesty</h2>
-      <p>Level 2</p>
-    </a>
+      <div class="team-card" onclick="showTeamDetails('shimmersquad')">
+        <h2>Shimmer Squad</h2>
+        <p>Level 1</p>
+      </div>
+    </div>
+  </div>
 
-    <a href="team-details.html?team=queen-of-hearts" class="team-card">
-      <h2>Queen of Hearts</h2>
-      <p>Level 3</p>
-    </a>
+  <!-- LEVEL 2 -->
+  <div class="level-section">
+    <h2 class="level-title">Level 2</h2>
+    <div class="team-grid">
+      <div class="team-card" onclick="showTeamDetails('diamonddynasty')">
+        <h2>Diamond Dynasty</h2>
+        <p>Level 2</p>
+      </div>
 
-    <a href="team-details.html?team=incredipower" class="team-card">
-      <h2>IncrediPower</h2>
-      <p>Level 3</p>
-    </a>
+      <div class="team-card" onclick="showTeamDetails('midnightmajesty')">
+        <h2>Midnight Majesty</h2>
+        <p>Level 2</p>
+      </div>
 
-    <a href="team-details.html?team=emerald-empire" class="team-card">
-      <h2>Emerald Empire</h2>
-      <p>Level 4</p>
-    </a>
+      <div class="team-card" onclick="showTeamDetails('sparklestars')">
+        <h2>Sparkle Stars</h2>
+        <p>Level 2</p>
+      </div>
+    </div>
+  </div>
 
-    <a href="team-details.html?team=golden-legacy" class="team-card">
-      <h2>Golden Legacy</h2>
-      <p>Level 4</p>
-    </a>
+  <!-- LEVEL 3 -->
+  <div class="level-section">
+    <h2 class="level-title">Level 3</h2>
+    <div class="team-grid">
+      <div class="team-card" onclick="showTeamDetails('queenofhearts')">
+        <h2>Queen of Hearts</h2>
+        <p>Level 3</p>
+      </div>
 
-    <a href="team-details.html?team=platinum-royals" class="team-card">
-      <h2>Platinum Royals</h2>
-      <p>Level 5</p>
-    </a>
+      <div class="team-card" onclick="showTeamDetails('incredipower')">
+        <h2>IncrediPower</h2>
+        <p>Level 3</p>
+      </div>
+    </div>
+  </div>
 
-    <a href="team-details.html?team=fierce-dynasty" class="team-card">
-      <h2>Fierce Dynasty</h2>
-      <p>Level 5</p>
-    </a>
+  <!-- LEVEL 4 -->
+  <div class="level-section">
+    <h2 class="level-title">Level 4</h2>
+    <div class="team-grid">
+      <div class="team-card" onclick="showTeamDetails('emeraldempire')">
+        <h2>Emerald Empire</h2>
+        <p>Level 4</p>
+      </div>
 
-    <a href="team-details.html?team=infinity-elite" class="team-card">
-      <h2>Infinity Elite</h2>
-      <p>Level 6</p>
-    </a>
+      <div class="team-card" onclick="showTeamDetails('goldenlegacy')">
+        <h2>Golden Legacy</h2>
+        <p>Level 4</p>
+      </div>
+    </div>
+  </div>
 
-    <a href="team-details.html?team=legacy-legends" class="team-card">
-      <h2>Legacy Legends</h2>
-      <p>Level 6</p>
-    </a>
+  <!-- LEVEL 5 -->
+  <div class="level-section">
+    <h2 class="level-title">Level 5</h2>
+    <div class="team-grid">
+      <div class="team-card" onclick="showTeamDetails('platinumroyals')">
+        <h2>Platinum Royals</h2>
+        <p>Level 5</p>
+      </div>
 
-    <a href="team-details.html?team=shimmer-squad" class="team-card">
-      <h2>Shimmer Squad</h2>
-      <p>Level 1</p>
-    </a>
+      <div class="team-card" onclick="showTeamDetails('fiercedynasty')">
+        <h2>Fierce Dynasty</h2>
+        <p>Level 5</p>
+      </div>
+    </div>
+  </div>
 
-    <a href="team-details.html?team=sparkle-stars" class="team-card">
-      <h2>Sparkle Stars</h2>
-      <p>Level 2</p>
-    </a>
+  <!-- LEVEL 6 -->
+  <div class="level-section">
+    <h2 class="level-title">Level 6</h2>
+    <div class="team-grid">
+      <div class="team-card" onclick="showTeamDetails('infinityelite')">
+        <h2>Infinity Elite</h2>
+        <p>Level 6</p>
+      </div>
 
-    <a href="team-details.html?team=tiny-twinkles" class="team-card">
-      <h2>Tiny Twinkles</h2>
-      <p>Prep</p>
-    </a>
+      <div class="team-card" onclick="showTeamDetails('legacylegends')">
+        <h2>Legacy Legends</h2>
+        <p>Level 6</p>
+      </div>
+    </div>
+  </div>
 
-    <a href="team-details.html?team=mini-magic" class="team-card">
-      <h2>Mini Magic</h2>
-      <p>Novice</p>
-    </a>
+</div>
+
+<!-- TEAM DETAILS MODAL -->
+<div id="teamModal" class="team-details">
+  <div class="team-modal">
+    <button class="close-btn" onclick="closeTeamDetails()">×</button>
+    <div id="modalContent"></div>
   </div>
 </div>
 
@@ -283,15 +407,15 @@ footer h3 {
   <div class="footer-content">
     <div class="footer-section">
       <h3>📍 Location</h3>
-      <p>Enchanted Legacy Cheer</p>
+      <p>Wonderland All-Stars Cheer</p>
       <p>Wonderland, USA</p>
-      <p>Your City, State ZIP</p>
+      <p>Home of Champions</p>
     </div>
 
     <div class="footer-section">
       <h3>📞 Contact</h3>
       <p><strong>Phone:</strong> (555) 123-4567</p>
-      <p><strong>Email:</strong> info@enchantedlegacy.com</p>
+      <p><strong>Email:</strong> info@wonderlandallstars.com</p>
       <p><strong>Hours:</strong> Mon-Fri 4pm-9pm</p>
     </div>
 
@@ -299,26 +423,152 @@ footer h3 {
       <h3>🔗 Quick Links</h3>
       <a href="index.html">Home</a><br>
       <a href="teams.html">Teams</a><br>
-      <a href="tryouts.html">Tryouts</a><br>
-      <a href="schedule.html">Schedule</a><br>
+      <a href="season.html">Season Info</a><br>
+      <a href="gallery.html">Gallery</a><br>
       <a href="contact.html">Contact</a>
     </div>
 
     <div class="footer-section">
       <h3>🌟 Follow Us</h3>
-      <div class="social-links">
-        <a href="https://facebook.com" title="Facebook">f</a>
-        <a href="https://instagram.com" title="Instagram">📷</a>
-        <a href="https://tiktok.com" title="TikTok">♪</a>
-        <a href="https://youtube.com" title="YouTube">▶</a>
-      </div>
+      <p><a href="https://facebook.com/wonderlandallstars">Facebook</a><br>
+      <a href="https://instagram.com/wonderlandallstars">Instagram</a><br>
+      <a href="https://tiktok.com/@wonderlandallstars">TikTok</a><br>
+      <a href="https://youtube.com/wonderlandallstars">YouTube</a></p>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Enchanted Legacy Cheer | Building Champions. Creating Legends. ✨</p>
+    <p>© 2026 Wonderland All-Stars Cheer | Building Champions. Creating Legends. ✨</p>
   </div>
 </footer>
+
+<script>
+const teamData = {
+  minimagic: {
+    name: "Mini Magic",
+    level: "Novice Level",
+    ages: "5-7 years old",
+    description: "Our youngest cheerleaders learn the basics of cheer in a fun, supportive environment. Perfect for beginning their cheer journey!"
+  },
+  royalrebels: {
+    name: "Royal Rebels",
+    level: "Level 1",
+    ages: "All Ages",
+    description: "Dynamic Level 1 team ready to make an impact! Perfect for cheerleaders learning fundamental skills."
+  },
+  glitterknights: {
+    name: "Glitter Knights",
+    level: "Level 1",
+    ages: "All Ages",
+    description: "Bringing sparkle and spirit to the floor! This Level 1 team excels in technique and teamwork."
+  },
+  shimmersquad: {
+    name: "Shimmer Squad",
+    level: "Level 1",
+    ages: "All Ages",
+    description: "Where enthusiasm meets excellence! Level 1 team with amazing energy and dedication."
+  },
+  diamonddynasty: {
+    name: "Diamond Dynasty",
+    level: "Level 2",
+    ages: "All Ages",
+    description: "Precious talent shines bright! Our Level 2 team showcases advanced skills and incredible synchronization."
+  },
+  midnightmajesty: {
+    name: "Midnight Majesty",
+    level: "Level 2",
+    ages: "All Ages",
+    description: "Powerful and elegant! This Level 2 team combines strength with grace on every routine."
+  },
+  sparklestars: {
+    name: "Sparkle Stars",
+    level: "Level 2",
+    ages: "All Ages",
+    description: "Rising stars of cheer! Level 2 team known for their sparkle, skill, and star quality performances."
+  },
+  queenofhearts: {
+    name: "Queen of Hearts",
+    level: "Level 3",
+    ages: "All Ages",
+    description: "Ruling the competition! Our Level 3 team brings confidence, complexity, and captivating performances."
+  },
+  incredipower: {
+    name: "IncrediPower",
+    level: "Level 3",
+    ages: "All Ages",
+    description: "Incredible athleticism meets amazing artistry! This Level 3 team is powerfully incredible."
+  },
+  emeraldempire: {
+    name: "Emerald Empire",
+    level: "Level 4",
+    ages: "All Ages",
+    description: "Reigning with precision! Our Level 4 team displays incredible technique and competitive excellence."
+  },
+  goldenlegacy: {
+    name: "Golden Legacy",
+    level: "Level 4",
+    ages: "All Ages",
+    description: "A tradition of excellence! Level 4 team leaving a golden mark on the cheer world."
+  },
+  platinumroyals: {
+    name: "Platinum Royals",
+    level: "Level 5",
+    ages: "All Ages",
+    description: "Elite performers at its finest! Our Level 5 team competes at the highest standards with unmatched skill."
+  },
+  fiercedynasty: {
+    name: "Fierce Dynasty",
+    level: "Level 5",
+    ages: "All Ages",
+    description: "Unstoppable force of nature! Level 5 team known for intense performances and fierce competitiveness."
+  },
+  infinityelite: {
+    name: "Infinity Elite",
+    level: "Level 6",
+    ages: "All Ages",
+    description: "Excellence without limits! Our highest-level team brings championship-caliber performances every time."
+  },
+  legacylegends: {
+    name: "Legacy Legends",
+    level: "Level 6",
+    ages: "All Ages",
+    description: "Making history with every routine! Level 6 team of legendary athletes creating unforgettable moments."
+  }
+};
+
+function showTeamDetails(teamId) {
+  const team = teamData[teamId];
+  const modal = document.getElementById('teamModal');
+  const content = document.getElementById('modalContent');
+
+  content.innerHTML = `
+    <h2>${team.name}</h2>
+    <div class="modal-content">
+      <p><strong>Level:</strong> ${team.level}</p>
+      <p><strong>Ages:</strong> ${team.ages}</p>
+      <p>${team.description}</p>
+      <p style="margin-top: 25px; font-style: italic; color: #ffe600;">
+        Ready to join? Contact us to learn more about tryouts and training!
+      </p>
+    </div>
+  `;
+
+  modal.classList.add('active');
+}
+
+function closeTeamDetails() {
+  const modal = document.getElementById('teamModal');
+  modal.classList.remove('active');
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', function(event) {
+  const modal = document.getElementById('teamModal');
+  if (event.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+</script>
 
 </body>
 </html>
