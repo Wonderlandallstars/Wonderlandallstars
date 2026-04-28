@@ -232,6 +232,7 @@ function openTab(tabName) {
     <a href="teams.html">Teams</a>
     <a href="schedule.html">Schedule</a>
     <a href="registration.html">Registration</a>
+    <a href="private-lessons.html">Private Lessons</a>
     <a href="pro-shop.html">Shop</a>
   </div>
 </header>
@@ -246,7 +247,7 @@ function openTab(tabName) {
   <div class="tabs">
     <button class="tab-btn active" onclick="openTab('practice'); event.target.classList.add('active');">Practice Schedule</button>
     <button class="tab-btn" onclick="openTab('competitions'); event.target.classList.add('active');">Competition Calendar</button>
-    <button class="tab-btn" onclick="openTab('events'); event.target.classList.add('active');">Special Events</button>
+    <button class="tab-btn" onclick="openTab('clinics'); event.target.classList.add('active');">Skills Clinics</button>
   </div>
 
   <!-- Practice Schedule Tab -->
@@ -297,15 +298,15 @@ function openTab(tabName) {
           <td>Diamond Dynasty</td>
           <td>Level 2</td>
           <td>Mon, Wed, Fri</td>
-          <td>6:30 PM - 8:00 PM</td>
-          <td>1.5 hours</td>
+          <td>6:30 PM - 8:30 PM</td>
+          <td>2 hours</td>
         </tr>
         <tr>
           <td>Midnight Majesty</td>
           <td>Level 2</td>
           <td>Tue, Thu, Sat</td>
-          <td>6:30 PM - 8:00 PM</td>
-          <td>1.5 hours</td>
+          <td>6:30 PM - 8:30 PM</td>
+          <td>2 hours</td>
         </tr>
         <tr>
           <td>Queen of Hearts</td>
@@ -324,21 +325,42 @@ function openTab(tabName) {
         <tr>
           <td>Emerald Empire</td>
           <td>Level 4</td>
-          <td>Mon, Wed, Fri, Sun</td>
+          <td>Mon, Wed, Fri</td>
+          <td>7:30 PM - 9:30 PM</td>
+          <td>2 hours</td>
+        </tr>
+        <tr>
+          <td>Golden Legacy</td>
+          <td>Level 4</td>
+          <td>Tue, Thu, Sat</td>
           <td>7:30 PM - 9:30 PM</td>
           <td>2 hours</td>
         </tr>
         <tr>
           <td>Platinum Royals</td>
           <td>Level 5</td>
+          <td>Mon, Wed, Fri, Sun</td>
+          <td>8:00 PM - 10:00 PM</td>
+          <td>2 hours</td>
+        </tr>
+        <tr>
+          <td>Fierce Dynasty</td>
+          <td>Level 5</td>
           <td>Tue, Thu, Sat, Sun</td>
-          <td>7:30 PM - 9:30 PM</td>
+          <td>8:00 PM - 10:00 PM</td>
           <td>2 hours</td>
         </tr>
         <tr>
           <td>Infinity Elite</td>
           <td>Level 6</td>
-          <td>Mon, Tue, Wed, Thu, Sat</td>
+          <td>Tue, Thu, Sun</td>
+          <td>8:00 PM - 10:00 PM</td>
+          <td>2 hours</td>
+        </tr>
+        <tr>
+          <td>Legacy Legends</td>
+          <td>Level 6</td>
+          <td>Mon, Wed, Sun</td>
           <td>8:00 PM - 10:00 PM</td>
           <td>2 hours</td>
         </tr>
@@ -352,8 +374,27 @@ function openTab(tabName) {
     <h2 style="color: #ffe600;">2026 Competition Calendar</h2>
     <p style="margin-bottom: 30px;">Follow our teams throughout the season as they compete at regional, national, and invitational competitions!</p>
     
+    <h3 style="color: #ffe600; margin-top: 30px;">LEVEL 1-2 COMPETITIONS</h3>
     <div class="event-card">
-      <h3>🎪 Enchanted Invitational</h3>
+      <h3>🎪 Enchanted Invitational Level 1-2</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 Date:</span>
+          <span class="detail-value">April 11-12, 2026</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📍 Location:</span>
+          <span class="detail-value">Local Convention Center</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">🏅 Teams:</span>
+          <span class="detail-value">Royal Rebels, Glitter Knights, Diamond Dynasty, Midnight Majesty</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <h3>⭐ Spirit of the Game (Level 1-2)</h3>
       <div class="event-details">
         <div class="detail-item">
           <span class="detail-label">📅 Date:</span>
@@ -361,53 +402,91 @@ function openTab(tabName) {
         </div>
         <div class="detail-item">
           <span class="detail-label">📍 Location:</span>
-          <span class="detail-value">Local Convention Center</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">🎯 Teams Competing:</span>
-          <span class="detail-value">All Levels</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <h3>⭐ Spirit of the Game Championship</h3>
-      <div class="event-details">
-        <div class="detail-item">
-          <span class="detail-label">📅 Date:</span>
-          <span class="detail-value">June 6-7, 2026</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">📍 Location:</span>
           <span class="detail-value">Regional Arena</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">🎯 Teams Competing:</span>
-          <span class="detail-value">Level 2-6</span>
+          <span class="detail-label">🏅 Teams:</span>
+          <span class="detail-value">Level 1-2 Teams</span>
         </div>
       </div>
     </div>
 
+    <h3 style="color: #ffe600; margin-top: 30px;">LEVEL 3-4 COMPETITIONS</h3>
     <div class="event-card">
-      <h3>💎 Summer Elite Showcase</h3>
+      <h3>💎 Elite Summit (Level 3-4)</h3>
       <div class="event-details">
         <div class="detail-item">
           <span class="detail-label">📅 Date:</span>
-          <span class="detail-value">July 18-19, 2026</span>
+          <span class="detail-value">May 2-3, 2026</span>
         </div>
         <div class="detail-item">
           <span class="detail-label">📍 Location:</span>
           <span class="detail-value">State Championship Venue</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">🎯 Teams Competing:</span>
-          <span class="detail-value">Level 3-6</span>
+          <span class="detail-label">🏅 Teams:</span>
+          <span class="detail-value">Queen of Hearts, IncrediPower, Emerald Empire, Golden Legacy</span>
         </div>
       </div>
     </div>
 
     <div class="event-card">
-      <h3>✨ Fall Regional Championship</h3>
+      <h3>✨ Summer Elite Showcase (Level 3-4)</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 Date:</span>
+          <span class="detail-value">June 27-28, 2026</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📍 Location:</span>
+          <span class="detail-value">Regional Stadium</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">🏅 Teams:</span>
+          <span class="detail-value">Level 3-4 Teams</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="color: #ffe600; margin-top: 30px;">LEVEL 5-6 ELITE COMPETITIONS</h3>
+    <div class="event-card">
+      <h3>👑 Grand Championship (Level 5-6)</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 Date:</span>
+          <span class="detail-value">March 7-8, 2026</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📍 Location:</span>
+          <span class="detail-value">National Stadium</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">🏅 Teams:</span>
+          <span class="detail-value">Platinum Royals, Fierce Dynasty, Infinity Elite, Legacy Legends</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <h3>🌟 Spring Elite Invitational (Level 5-6)</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 Date:</span>
+          <span class="detail-value">April 18-19, 2026</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📍 Location:</span>
+          <span class="detail-value">National Venue</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">🏅 Teams:</span>
+          <span class="detail-value">Level 5-6 Teams</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <h3>🎭 Fall Regional Championship (All Levels)</h3>
       <div class="event-details">
         <div class="detail-item">
           <span class="detail-label">📅 Date:</span>
@@ -418,14 +497,14 @@ function openTab(tabName) {
           <span class="detail-value">Regional Stadium</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">🎯 Teams Competing:</span>
+          <span class="detail-label">🏅 Teams:</span>
           <span class="detail-value">All Levels</span>
         </div>
       </div>
     </div>
 
     <div class="event-card">
-      <h3>👑 Grand National Championship</h3>
+      <h3>🏆 Global National Championship (Level 5-6)</h3>
       <div class="event-details">
         <div class="detail-item">
           <span class="detail-label">📅 Date:</span>
@@ -436,69 +515,140 @@ function openTab(tabName) {
           <span class="detail-value">National Championship Arena</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">🎯 Teams Competing:</span>
-          <span class="detail-value">Qualified Level 4-6 Teams</span>
+          <span class="detail-label">🏅 Teams:</span>
+          <span class="detail-value">Qualified Level 5-6 Teams</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Special Events Tab -->
-  <div id="events" class="tab-content">
-    <h2 style="color: #ffe600;">Special Events & Activities</h2>
+  <!-- Clinics Tab -->
+  <div id="clinics" class="tab-content">
+    <h2 style="color: #ffe600;">Skills Clinics & Special Events</h2>
+    <p style="margin-bottom: 30px;">Specialized training to level up your skills!</p>
     
     <div class="event-card">
-      <h3>🌟 Skills Clinic Days</h3>
+      <h3>🎯 Flyer Class</h3>
       <div class="event-details">
         <div class="detail-item">
           <span class="detail-label">📅 When:</span>
-          <span class="detail-value">2nd Saturday of each month</span>
+          <span class="detail-value">1st Saturday of each month, 10:00 AM - 11:30 AM</span>
         </div>
         <div class="detail-item">
           <span class="detail-label">📝 Details:</span>
-          <span class="detail-value">Specialized training in tumbling, stunting, and dance</span>
+          <span class="detail-value">Advanced stunting techniques for flyers. Ages 8+</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">💰 Cost:</span>
+          <span class="detail-value">$35 per session</span>
         </div>
       </div>
     </div>
 
     <div class="event-card">
-      <h3>🎉 Family Fun Day</h3>
+      <h3>🔝 Base & Spotter Training</h3>
       <div class="event-details">
         <div class="detail-item">
-          <span class="detail-label">📅 Date:</span>
+          <span class="detail-label">📅 When:</span>
+          <span class="detail-value">2nd Saturday of each month, 10:00 AM - 11:30 AM</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📝 Details:</span>
+          <span class="detail-value">Foundation and safety techniques for bases and spotters</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">💰 Cost:</span>
+          <span class="detail-value">$35 per session</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <h3>🤸 Advanced Tumbling</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 When:</span>
+          <span class="detail-value">3rd Saturday of each month, 12:00 PM - 1:30 PM</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📝 Details:</span>
+          <span class="detail-value">Master flips, twists, and advanced pass combinations</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">💰 Cost:</span>
+          <span class="detail-value">$40 per session</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <h3>💃 Dance Technique</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 When:</span>
+          <span class="detail-value">4th Saturday of each month, 1:00 PM - 2:30 PM</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📝 Details:</span>
+          <span class="detail-value">Hip-hop, jazz, and contemporary dance styles</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">💰 Cost:</span>
+          <span class="detail-value">$30 per session</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <h3>💪 Strength & Conditioning</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 When:</span>
+          <span class="detail-value">Every Sunday, 3:00 PM - 4:00 PM</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📝 Details:</span>
+          <span class="detail-value">Build muscle, improve endurance, and prevent injuries</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">💰 Cost:</span>
+          <span class="detail-value">$25 per session</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <h3>🏅 Flexibility & Mobility</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 When:</span>
+          <span class="detail-value">Every Sunday, 4:15 PM - 5:00 PM</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">📝 Details:</span>
+          <span class="detail-value">Increase range of motion and prevent soreness</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">💰 Cost:</span>
+          <span class="detail-value">$20 per session</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <h3>🎉 Special Events</h3>
+      <div class="event-details">
+        <div class="detail-item">
+          <span class="detail-label">📅 Family Fun Day:</span>
           <span class="detail-value">June 28, 2026</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">📝 Details:</span>
-          <span class="detail-value">Games, performances, and celebration of our family!</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <h3>🏆 Awards Banquet</h3>
-      <div class="event-details">
-        <div class="detail-item">
-          <span class="detail-label">📅 Date:</span>
-          <span class="detail-value">December 12, 2026</span>
+          <span class="detail-label">📅 Awards Banquet:</span>
+          <span class="detail-value">April 19, 2026</span>
         </div>
         <div class="detail-item">
-          <span class="detail-label">📝 Details:</span>
-          <span class="detail-value">Celebrate season achievements and recognize our athletes</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <h3>🎓 Cheer Camp</h3>
-      <div class="event-details">
-        <div class="detail-item">
-          <span class="detail-label">📅 Date:</span>
+          <span class="detail-label">📅 Summer Cheer Camp:</span>
           <span class="detail-value">August 1-5, 2026</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-label">📝 Details:</span>
-          <span class="detail-value">Intensive training, team bonding, and new choreography</span>
         </div>
       </div>
     </div>
